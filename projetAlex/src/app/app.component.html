@@ -1,0 +1,22 @@
+<input type="text" [(ngModel)]="cur">
+<button (click)="filtre()">Filtrer</button>
+
+<div>
+  <input type="text" [(ngModel)]="newPersonne">
+  <button (click)="ajout(newPersonne)">Ajouter une personne</button>
+</div>
+
+<div>
+  <ul>
+    <li *ngIf="'Alain'.startsWith(champ) || champ == null">Alain</li>
+    <li *ngIf="'Julien'.startsWith(champ) || champ == null">Julien</li>
+    <li *ngIf="'Henri'.startsWith(champ) || champ == null">Henri</li>
+    <li *ngIf="'Etienne'.startsWith(champ) || champ == null">Etienne</li>
+    <li *ngIf="'Samira'.startsWith(champ) || champ == null">Samira</li>
+    <li *ngIf="'Joseph'.startsWith(champ) || champ == null">Jospeh</li>
+    <li *ngIf="'André'.startsWith(champ) || champ == null">André</li>
+    <li *ngIf="'Paul'.startsWith(champ) || champ == null">Paul</li>
+    <li *ngIf="'Samuel'.startsWith(champ) || champ == null">Samuel</li>
+    <li *ngIf="'Dany'.startsWith(champ) || champ == null">Dany</li>
+  </ul>
+</div>

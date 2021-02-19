@@ -1,0 +1,33 @@
+<h1>Formulaire d'inscription</h1>
+  <form [formGroup]="formulband" (submit)="onSubmit()">
+    <div>
+      <label for="name">Band : </label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+  
+    <div>
+      <label for="style">Style : </label>
+      <select formControlName="style">
+        <option value="">Choisi un Style</option>
+        <option value="Death">Death</option>
+        <option value="Black">Black</option>
+        <option value="Thrash">Thrash</option>
+        <option value="Doom">Doom</option>
+        <option value="Power">Power</option>
+      </select>
+    </div>
+    
+
+    <div>
+      <label for="members">Members : </label>
+      <input id="members" type="number" formControlName="members">
+    </div>
+    <p *ngIf="formulband.invalid && formulband.controls.style.dirty
+    && formulband.controls.members.dirty">formulaire invalide</p>
+
+  <button type="submit">Inscrire</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let g of liste">{{g.name}} - {{g.style}} Metal - {{g.members}} musicians</li>
+  </ul>

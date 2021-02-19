@@ -1,0 +1,14 @@
+<div class="row">
+    <div style="height:450px;" class="col s12">
+        <ul>
+            <li style="color:black;" *ngFor="let message of listMessages">
+                {{message.email}} <b>{{message.message}}</b>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col s12">
+        <input [(ngModel)]="newMessage">
+        <button class="btn waves-light waves-effect" (click)="sendMessage()">Send message</button>
+    </div>
+</div>

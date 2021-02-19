@@ -1,0 +1,32 @@
+<nb-card>
+    <nb-card-header>
+        Nouvel utilisateur
+    </nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="fg" (submit)="onSubmit()">
+            <nb-list>
+                <nb-list-item>
+                    <label>E-mail : </label>
+                    <input nbInput type="text" formControlName="email">
+                </nb-list-item>
+                <nb-list-item>
+                    <label>Mot de passe : </label>
+                    <input nbInput type="password" formControlName="password">
+                </nb-list-item>
+                <nb-list-item>
+                    <label>Prénom : </label>
+                    <input nbInput type="text" formControlName="firstName">
+                </nb-list-item>
+                <nb-list-item>
+                    <label>Nom : </label>
+                    <input nbInput type="text" formControlName="lastName">
+                </nb-list-item>
+                <nb-list-item>
+                    <label>Date de naissance : </label>
+                    <input nbInput type="date" formControlName="birthDate">
+                </nb-list-item>
+            </nb-list>
+            <button type="=submit" nbButton status="success" *ngIf="!fg.invalid">Valider</button>
+        </form>
+    </nb-card-body>
+</nb-card>

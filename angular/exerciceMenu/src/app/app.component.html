@@ -1,0 +1,21 @@
+<form [formGroup]="formulBand">
+  <div>
+    <label for="title">Band</label>
+    <input title="band" id="Band" formControlName="band">
+  </div>
+  <div>
+    <label for="title">Style</label>
+    <select title="band" formControlName="style">
+      <option value="Death">Death</option>
+      <option value="Black">Black</option>
+      <option value="Doom">Doom</option>
+      <option value="Thrash">Thrash</option>
+      <option value="Power">Power</option>
+    </select>  
+    </div>
+    <div>
+      <label for="title">Members</label>
+      <input title="band" formControlName="members">
+    </div>
+    <div >{{members}}</div>
+</form>

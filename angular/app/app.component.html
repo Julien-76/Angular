@@ -1,0 +1,32 @@
+<app-menu></app-menu>
+<div class="container">
+    <div class="row">
+        <div class="col s6">
+            <form [formGroup]="todoFormCreate" (submit)="handleSubmit()">
+                <div class="input-field">
+                    <label for="title">Titre</label>
+                    <input name="title" formControlName="title" [class.invalid]="todoFormCreate.get('title').invalid && todoFormCreate.get('title').dirty">
+                    
+                    <div *ngIf="todoFormCreate.get('title').invalid && todoFormCreate.get('title').dirty">
+                        Le champs est obligatoire
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="description">Description</label>
+                    <textarea name="description" formControlName="description"></textarea>
+                </div>
+                <div class="input-field">
+                    <label for="dueDate">Date de fin</label>
+                    <input type="date" formControlName="dueDate">
+                </div>
+
+                <button type="submit">Ajouter le todos</button>
+            </form>
+        </div>
+        <div class="col s6">
+            <ul>
+                <li *ngFor="let todo of todoes" (click)="editAction(todo)">{{ todo.title }}</li>
+            </ul>
+        </div>
+    </div>
+</div>

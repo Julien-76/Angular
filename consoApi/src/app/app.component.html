@@ -1,0 +1,34 @@
+
+
+<nb-layout>
+  <nb-layout-header fixed>
+    <span>Conso API</span>
+    <span style="margin-left: auto; margin-right: 0;">
+      <div><form [formGroup]="fg" (submit)="onSubmit()">
+        <span>email : 
+            <input type="email" nbInput placeholder="e-mail" formControlName="email">
+        </span>
+        <span>password : 
+            <input type="password" nbInput placeholder="password" formControlName="password">
+        </span>
+        <button *ngIf="!isConnected" type="submit" nbButton size="tiny" status="info" >Connexion</button>
+        <button  routerLink="/register" nbButton size="tiny" status="info" >Register</button>
+
+          <button *ngIf="isConnected" nbButton size="tiny" status="info" (click)="logout()">Déconnexion</button>
+    </form></div>
+    </span>
+  </nb-layout-header>
+
+  <nb-sidebar>
+    <button nbButton status="WARNING" >Afficher les Films</button> 
+    <nb-menu [items]="items"></nb-menu>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+  <nb-layout-footer>
+    &copy; Technifutur 2021
+  </nb-layout-footer>
+</nb-layout>

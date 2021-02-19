@@ -1,0 +1,15 @@
+<h1 style="text-align: center;">Basket Team Manager</h1>
+
+<div class="liste" *ngFor="let p of members"><span class="donnees">{{p.nom}}</span><span class="donnees">{{p.prenom}}</span><span class="donnees">{{p.age}} ans</span><span class="donnees">{{p.taille}} cm</span>
+<button class="donnees delete" (click)="clickDelete(p, members)">Delete</button></div>
+<div class="formul">
+  <form (submit)="onSubmit()" [formGroup]="formulteam">
+    <div>
+      <label for="nom">Nom</label><input type="text" formControlName="nom">
+      <label for="prenom">Prénom</label><input type="text" formControlName="prenom">
+      <label for="age">Age</label><input type="number" formControlName="age">
+      <label for="taille">Taille</label><input type="number" formControlName="taille">
+      <button type="submit">Ajouter</button>
+    </div>
+  </form>
+</div>
